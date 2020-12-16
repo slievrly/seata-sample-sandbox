@@ -1,11 +1,11 @@
 ## 使用说明
 
 ### 目录清单：   
-1. seata-server-1.4.1.zip 为 seata-server 压缩包   
+1. [seata-server-1.4.1.zip](https://github.com/slievrly/seata-sample-sandbox/tree/master/seata-server) 为 seata-server 压缩包   
 2. seata-sample-sandbox 文件夹为微服务源码工程，包括：storage（库存微服务）、order（订单微服务）和 business（页面交互微服务）   
 
 ### 启动步骤：
-1. 解压：unzip seata-server-1.4.1.zip   
+1. 解压：unzip [seata-server-1.4.1.zip](https://github.com/slievrly/seata-sample-sandbox/tree/master/seata-server)   
 2. 启动 seata-server：nohup sh ./seata/bin/seata-server.sh -p 8091 -m file &   
 3. 启动微服务：依次启动 storage（库存微服务）、order（订单微服务）和 business（页面交互微服务）   
 4. 服务调用：   
