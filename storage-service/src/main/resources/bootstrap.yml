@@ -1,0 +1,15 @@
+spring:
+   application:
+      name: storage-service
+   main:
+      allow-bean-definition-overriding: true
+   cloud:
+      loadbalancer:
+         retry:
+            enabled: false
+server:
+   port: 8083
+ribbon:
+   ConnectTimeout: 100000
+   ReadTimeout: 1000000
+   OkToRetryOnAllOperations: false

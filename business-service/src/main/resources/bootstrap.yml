@@ -1,0 +1,25 @@
+spring:
+   application:
+      name: business-service
+   main:
+      allow-bean-definition-overriding: true
+   cloud:
+      loadbalancer:
+         retry:
+            enabled: false
+server:
+   port: 8081
+ribbon:
+   ConnectTimeout: 100000
+   ReadTimeout: 1000000
+   OkToRetryOnAllOperations: false
+feign:
+   httpclient:
+      enabled: true
+      connection-timeout: 60000
+   client:
+      config:
+         default:
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: FULL

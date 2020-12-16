@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alibaba.seata.sample.storage.service.mapper.StorageMapper">
+    <resultMap id="BaseResultMap" type="com.alibaba.seata.sample.common.entity.Storage">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="commodity_code" property="commodityCode" jdbcType="VARCHAR"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select id, commodity_code, count from storage_tbl
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, commodity_code, count from storage_tbl
+    </select>
+
+    <select id="selectStockByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select id, commodity_code, count from storage_tbl
+        WHERE commodity_code = #{commodityCode}
+    </select>
+
+    <update id="updateStockByCode">
+        update storage_tbl set count = count- #{count}
+        WHERE commodity_code = #{commodityCode} and count &gt;= #{count}
+    </update>
+
+    <insert id="insert" parameterType="com.alibaba.seata.sample.common.entity.Storage">
+        insert into storage_tbl (commodity_code, count)
+        values (#{commodityCode,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete from storage_tbl where commodity_code=#{commodityCode}
+    </delete>
+</mapper>

@@ -1,0 +1,23 @@
+spring:
+   datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://rm-2zetd9474ydd1g5955o.mysql.rds.aliyuncs.com:3306/seata_training?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: seata
+      password: seata123
+      max-wait: 60000
+      max-active: 100
+      min-idle: 10
+      initial-size: 10
+mybatis:
+   mapper-locations: classpath*:mapper/*Mapper.xml
+seata:
+   enabled: true
+   application-id: order
+   tx-service-group: my_test_tx_group
+   service:
+      vgroup-mapping:
+         my_test_tx_group: default
+      grouplist:
+         default: 127.0.0.1:8091
+      disable-global-transaction: false
