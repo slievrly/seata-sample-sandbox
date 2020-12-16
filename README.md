@@ -2,7 +2,7 @@
 
 ### 目录清单：   
 1. seata-server-1.4.1.zip 为 seata-server 压缩包   
-2. seata-sample-snadbox 文件夹为微服务源码工程，包括：storage（库存微服务）、order（订单微服务）和 business（页面交互微服务）   
+2. seata-sample-sandbox 文件夹为微服务源码工程，包括：storage（库存微服务）、order（订单微服务）和 business（页面交互微服务）   
 
 ### 启动步骤：
 1. 解压：unzip seata-server-1.4.1.zip   
